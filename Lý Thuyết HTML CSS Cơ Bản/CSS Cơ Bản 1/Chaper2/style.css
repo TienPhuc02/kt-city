@@ -1,0 +1,311 @@
+/*
+selector{
+    property:value;
+}
+
+
+
+selector:
+Tags:p,div,h1,main,a,span
+Class:.demo,.header,.body
+ID:#container,#footer
+
+property:color,background-color
+value:red,green,...
+
+*/
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+input,
+select,
+textarea {
+  background-color: transparent;
+  outline: none;
+}
+button {
+  cursor: pointer;
+  background-color: transparent;
+  outline: none;
+  border: 0;
+}
+body {
+  min-height: 100vh;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1;
+}
+
+/*  cấu trúc CSS */
+html {
+  font-size: 62.5%;
+}
+p {
+  /*
+  color:value;
+  */
+  /*
+  value:
+  named:red,orange,green
+  hexa:#ffa400:cam,#ff7870:hong,#666666->#666,#7cd7cd->#7cd
+  rgb:rgb(0,0,0),rgb(255,255,255)
+  rgba:rgba(0,0,0,0.5)
+  alpha : opacity 0-> 1
+  
+  */
+
+  color: red;
+  color: #ffa400;
+  color: rgb(0, 0, 0);
+  color: rgba(0, 0, 0, 0.5);
+}
+
+/*  CSS background */
+
+/*
+xét chiều rộng chiều cao thì background-color mới hiện
+*/
+.background {
+  background-color: #ffa400;
+  /* width: 100px; */
+  /* height: 100px; */
+  min-height: 100px; /*chiều cao tối thiểu là 100px , nếu dài nó tự động dài thêm*/
+  max-height: 200px; /* chiều cao tối đa*/
+  min-width: 100px;
+  max-width: 50%;
+  background-color: #2979ff;
+  /* overflow-x: hidden; khi bị trần ra ngoài thì ẩn đi */
+  /* overflow-y: hidden; khi bị trần ra ngoài thì ẩn đi */
+  /* overflow-y: auto; khi bị trần có scroll */
+}
+
+/*
+lưu í khi làm việc với background thì cần xét width và height
+*/
+.background2 {
+  background-image: url("https://plus.unsplash.com/premium_photo-1675461587541-3b3f5dabe739?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60");
+  width: 100%;
+  height: 1000px;
+  background-position: center center; /* hiển thị bức ảnh ra trung tâm ở giữa*/
+  background-size: cover; /*phủ hết khung */
+  background-repeat: no-repeat; /* không muốn ảnh repeat*/
+  background-attachment: fixed; /* khi scroll thì hình ảnh vẫn đứng yên -> lúc này background size cover không còn tác dụng nữa*/
+  background: red
+    url("https://plus.unsplash.com/premium_photo-1675461587541-3b3f5dabe739?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60")
+    no-repeat center center / cover;
+}
+
+/* các đơn vị trong css nên biết */
+.wrap {
+  width: 400px;
+}
+.background3 {
+  background-image: url("https://plus.unsplash.com/premium_photo-1675461587541-3b3f5dabe739?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60");
+  width: 100vw; /*full màn hình của mình và không có scroll*/
+  height: 100vh; /*full màn hình của mình và không có scroll*/
+  background-position: center center; /* hiển thị bức ảnh ra trung tâm ở giữa*/
+  background-size: cover; /*phủ hết khung */
+  background-repeat: no-repeat; /* không muốn ảnh repeat*/
+  background-attachment: fixed; /* khi scroll thì hình ảnh vẫn đứng yên -> lúc này background size cover không còn tác dụng nữa*/
+}
+/* viewprot width và viewport height không quan tâm cha nó dài rộng như nào */
+/* 100% và 100vw đều giống nhau là full chiều ngang nhưng thằng % nó bị vướng thằng bao ngoài */
+
+/* đơn vị rem và em khác nhau như nào */
+/* mặc định các trình duyệt có font size100% =16px   */
+/* 1em=1rem=16px */
+
+.em {
+  width: 10em;
+  height: 10em;
+  background-color: #ffa400;
+  font-size: 32px;
+  /* 1em=32px  */
+  /* đơn vị em sẽ phụ thuộc vào thuộc tính font size của chính nó hoặc phần tử chứa nó */
+}
+
+.rem {
+  font-size: 32px;
+  width: 10rem;
+  height: 10rem;
+  background-color: #2979ff;
+  border: 2px solid black;
+  /* đơn vị rem sẽ  phụ thuộc vào thuộc tính font size của thẻ HTML */
+}
+/* html{
+  font-size:62.5% 
+  -> 1 rem=10px
+} */
+
+/* border cơ bản  */
+/* border: border-width border-style border-color */
+/* border-right: border-width border-style border-color */
+/* border-bottom: border-width border-style border-color */
+/* border-left: border-width border-style border-color */
+/* border-top: border-width border-style border-color */
+/* border-radius:10px -> bo góc */
+/* outline giống border nhưng không có radius */
+/* outline:2px solid black */
+
+/* margin  */
+
+.margin {
+  width: 14rem;
+  height: 14rem;
+  background-color: red;
+  /* margin: 10px 10px 10px 10px;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px; */
+
+  /* 1 giá trị -> top=left=right=bottom=20px */
+  /* margin: 20px; */
+  /*2 giá trị -> top=bottom=20px right=left=30px*/
+  /* margin: 20px 30px; */
+  /* 3 giá trị -> top=20px right=left=30px bottom=40px*/
+  /* margin: 20px 30px 40px; */
+
+  /* center*/
+  margin-left: auto; /*sát lề bên phải*/
+  margin-right: auto; /*sát lề bên trái*/
+  /* margin có thể dùng số âm */
+  /*margin collapse -> phần tử phía trên có margin bottom , phần tử phía dưới có margin top, giá trị nào có số lớn hơn thì lấy*/
+}
+
+/* padding */
+.padding {
+  width: 14rem;
+  height: 14rem;
+  background-color: red;
+  margin: 0 auto;
+  padding: 5px;
+  /* padding không thể là số âm */
+}
+
+/* box -sizing */
+
+.boxed {
+  width: 10rem;
+  height: 10rem;
+  border: 5px solid black;
+  background-color: #ffa400;
+  padding: 1rem;
+  box-sizing: content-box;
+  /* giá trị mặc đinh của box-sizing là content-box */
+  /* content-box */
+  /* width=width +padding-left+ padding-right+border-left+border-right */
+  /* height=height +height-left+ height-right+border-top+border-bottom */
+  box-sizing: border-box;
+  /* border-box khuyến khích nên dùng */
+  /* width=width -padding-left- padding-right-border-left-border-right */
+  /* height=height -height-left- height-right-border-top-border-bottom */
+}
+
+/* display */
+a {
+  /* color: white;
+  text-decoration: none;
+  width: 10rem;
+  height: 10rem;
+  padding: 1rem;
+  background-color: black;
+  display: inline-block; */
+  /* 1 số thẻ inline có vấn đề cần chuyển qua dạng block */
+  /* display: none; */
+}
+
+/* font chữ -> google font, font family, font style */
+
+/* các thuộc tính liên quan đến text */
+.font {
+  font-size: 2rem;
+  font-style: italic;
+  /* line-height: 1.4; */
+  /* khoảng cách giữa các dòng text */
+  /* text-align: center; */
+  /* chữ ra giữa */
+  /* max-width: 300px; */
+  /* đều 2 bên */
+  /* text-align: justify; */
+  /* căn đều 2 bên */
+  /* letter-spacing: 1px; */
+  /* khoảng cách giữa các kí tự */
+  /* word-spacing: 5px; */
+  /* khoảng cách giữa các từ */
+
+  /* hiển thị dấu 3 chấm trên 1 hàng */
+  /* white-space: nowrap; */
+  /* không muốn xuống dòng */
+  /* overflow: hidden; */
+  /* ẩn chữ phần bị tràn ra  */
+  /* text-overflow: ellipsis; */
+  /* hiển thị dấu 3 chấm */
+
+  /* hiển thị dấu 3 chấm ở hàng thứ 3
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  /* văn bản theo chiều dọc */
+  /* -webkit-line-clamp: 3; */
+  /* số dòng mà nó hiển thị ra */
+  /* overflow: hidden;
+  text-overflow: ellipsis; */
+  word-break: break-all;
+  /* xuống dòng không theo ý nghĩa gì */
+  word-break: break-word;
+  /* xuống dòng theo từ */
+}
+
+/* thuộc tính image */
+img {
+  display: block;
+  max-width: 100%;
+}
+.image-wrap {
+  text-align: center;
+  /* cách cho ra giữa với thẻ inline */
+}
+.image {
+  width: 20rem;
+  height: 20rem;
+  object-fit: cover;
+  /* hình ảnh phủ hết cái khung sao cho ảnh không bị méo  */
+  object-position: bottom;
+  /* lấy hình ảnh từ dưới lên */
+  margin: 0 auto;
+  display: inline-block;
+  /* inline-block là độ rộng bao nhiêu nó chỉ chiếm bấy nhiêu thôi */
+  border-radius: 50%;
+}
+
+/* pseudo */
+.pseudo {
+  display: block;
+  color: black;
+  font-size: 5rem;
+}
+.pseudo:hover {
+  color: #ccc;
+}
+.pseudo:active {
+  color: #ffa400;
+}
+
+.pseudo:visited {
+  color: #ffa400;
+}
+/* 1 hành động nào đó sẽ được lưu lại -> visited */

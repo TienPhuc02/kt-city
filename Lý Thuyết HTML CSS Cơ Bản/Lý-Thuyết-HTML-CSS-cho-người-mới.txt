@@ -1,0 +1,363 @@
+-Thẻ Inline và Thẻ Block
+Thẻ Inline là thẻ có độ rộng bằng nội dung nó chứa ,nếu có nhiều thẻ inline thì nó sẽ nằm trên 1 hàng -> bị hạn chế về thuộc tính CSS
+Thẻ Block là thẻ có độ rộng bằng phần tử cha chứa nó,nếu có nhiều thẻ block nằm với nhau thì nó sẽ rơi xuống hàng
+
+-Sự khác nhau giữa class và id
+class: có thể trùng nhau, dử dụng cho nhiều phần tử giống nhau
+id: không được đặt trùng nhau
+
+-BEM-Block Element Modifier
+Laptop:Block
+Keyboard,mouse,touchpad,screen:Elenment
+Laptopbig,Laptop small : Modifier for Block
+Small mouse,Big mouse:Modifier for Element
+
+syntax:Block__Element--Modifier
+Block--modifier
+Block__Element
+Emmet Cheat Sheet->google
+
+
+-Css reset 
+-> https://meyerweb.com/eric/tools/css/reset/
+
+-Tìm hiểu thuộc tính color, các giá trị về màu cần nắm vững
+value của color:
+named:red, orage,yellow
+hexa: #ffa400,#ff7870,#00aefđ,#666666->#666,
+rgb:rgb(0,0,0) , rgb(255,255,255)
+rgba:(0,0,0,0.5)
+alpha:opacity 0 ->1
+
+-Kích Thước trong css
+width ,height,
+overflow:hidden-> ẩn nội dung khi tràn ra ngoài phần màu
+overflow-y:auto -> có thanh cuộn xuống nội dung nếu bị tràn ra ngoài kích thước
+min-height,min-width: -> chiều cao tối thiểu 
+max-height,max-width
+background-color
+
+-các thuộc tính của background
+background-image:url("link ảnh ") -> hiển thị hình nền
+background-position: center center(x y)-> hiển thị ở chính giữa
+background-size:cover -> phủ hết khung
+background-repeat:no-repeat -> không lặp lại
+background-attachment:fixed ->scroll hình vẫn đứng yên 
+background: color url repeat position size -> viết gọn hơn -> short hand
+
+-các đơn vị trong css
+
+không có scroll: 
+width:100vw(viewport width),vh(viewport height)
+
+-đơn vị rem và em khác nhau như nào ?
+
+1em=1rem=16px
+đơn vị em : là đơn vị phụ thuộc vào chính font-size của chính nó hoặc phần tử chứa nó
+đơn vị rem : là đơn vị phụ thuộc vào chính font-size của thẻ html -> ưu tiên dùng rem hơn
+
+-thuộc tính border đơn giản
+
+border: border-width border-style border-color
+border-radius:
+
+-thuộc tính margin( có thể sử dụng số âm)
+
+margin : top right bottom left -> tạo khoảng trống ngoài phần tử
+margin collapse
+
+-thuộc tính padding:( không thể dùng số âm)
+padding : top right bottom left
+-> tạo khoảng trống bên trong phần tử
+
+-box-sizing trong CSS
+
+box-sizing:content-box
+
+width=width+padding-left+padding-right+border-left+border-right
+height=height+padding-top+padding-bottom+border-top+border-bottom
+
+box-sizing:border-box
+width=width-padding-left -padding-right -border-left - border-right
+height=height-padding-top -padding-bottom - border-top - border -bottom
+
+-thuộc tính display 
+text-dercoration
+display:inline-block -> kết hơp cả thẻ inline và thẻ block rộng bao nhiêu thì sẽ chiếm bấy nhiêu
+display:block -> chuyển thành thẻ block
+display:none -> 
+
+- thuộc tính font chữ font chữ -> google font
+
+font-family:
+font-size:
+font-weight:
+font-style:
+line-height: -> khoảng cách giữa các chữ
+text-alight: ->vị trí của chữ 
+letter-spacing: -> khoảng cách giữa các kí tự 
+word-spacing : khoảng cách giữa các từ
+hiện dấu 3 chấm nếu dòng chữ quá dài trên 1 hàng
+white-space:nowrap -> hiển thị chữ trên 1 dòng
+text-overflow:ellipsis -> hiện dấu 3 chấm nếu dòng chữ quá dài trên 1 hàng
+
+hiện dấu 3 chấm tới hàng thứ 3
+
+display:-webkit-box
+-webkit-box-orient:vertical
+-webkit-line-clamp:3;
+overflow:hidden
+text-overflow:ellipsis
+
+-xuống dòng nếu nhập vào 
+word-break:break-all 
+word-break:break-word
+ 
+-thuộc tính cho hình ảnh:
+object-fit:cover -> phủ hết cái khung
+object-position:top
+
+-cách làm hình nền gradient , chữ gradient trong CSS
+
+background-image:linear-gradient(to right bottom,#00aefd,#ffa400); -> direction:to right,to left, to bottom, to top ,to right bottom, to  left bottom, to left top, to right top, 120deg , color1,color2
+-webkit-background-clip:text
+background-clip:text; 
+-> in màu background vào text
+
+-hiển thị 2 hình nền với background-image: -> tạo 1 lớp mờ đè lên nhau
+background-image:linear-gradient(),url();-> mình sẽ để mã màu của linear-gradident với opacity <1 là được 
+background-size:cover;
+
+-caniuse là gì ? Và tại sao bạn nên biết -> check thuộc tính HTML CSS mà các trình duyệt đó hỗ trợ
+
+-Sự khác nhau giữa 3 thuộc tính opacity: 0, display:none, visibility:hidden
+
+opacity:0 -> không thấy gì trong suốt nhưng vẫn chiếm diện tích,vẫn nhấn vào được nếu có cusor:pointer
+visibility :hidden  -> không thấy gì trong suốt nhưng vẫn chiếm diện tích, không ấn vào được
+-> 2 thằng này hỗ trợ transition
+display:none -> không thấy gì không chiếm diện tích luôn
+
+-Tìm hiểu về shadow trong CSS -> tạo độ bóng
+
+box-shadow: x y blur(độ mờ) scale(viền) color 
+open shadow selector -> inspect , thuộc tính inset 
+
+text-shadow: x y blur color
+
+-Sử dụng biến trong CSS như thế nào?'
+:root{
+--primary-color:#00aefd
+--secondary-color:#ffa400
+sử dụng là var(--primary-color)
+cũng có thể ghi đè nội dung biến nếu ở trong class thì chỉ áp dụng với class đó
+
+-Hiểu rõ về độ ưu tiên trong CSS, xác định độ ưu tiên trong CSS đơn giản với VSCode
+CSS inline ưu tiên hơn
+Tags<Class<ID<!important
+
+-Nắm vững kiến thức về child selectors
+:first-child{}
+:last-child{}
+:nth-child(number){}(chạy từ trên xuống dưới)
+:nth-last-child(number{}(chạy  từ dưới lên trên)
+:not(:first-child){} -> chọn phần tử trừ phần tử đầu tiên
+:nth-child(odd){}-> chọn các phần tử số lẻ
+:nth-child(even){}-> số chẵn 
+:nth-child(công thức){}
+
+-Nắm vững kiến thức về type selectors
+:first-of-type{}
+:nth-of-type{}
+:nth-last-of-type(number){} 
+tuong tự như child selector
+type nó sẽ thông minh hơn 1 chút
+tag:first-child tag {}
+
+-Thành thạo combinators trong CSS
+
+h3 +title{
+color:green
+} -> title ăn CSS ( phải đứng liền kề,cùng cấp,phải đứng sau)
+h3 ~title2{
+} -> dấu ~ cùng cấp nhưng không nhất thiết phải liền kề, phải đứng sau
+
+
+-Tìm hiểu thêm các selectors nâng cao
+
+vấn đề : không có class,id
+a[href^="https"] -> trỏ đến thẻ a có href bắt đầu là https
+a[href$=".vn"] -> trỏ đến thẻ a có href kết thúc là .vn
+a[href*="www"] -> trỏ đến thẻ a có chứ "www"
+div[data-title="value"]{}
+p::first-letter{} -> lấy kí tự đầu tiên
+p::first-line{}
+
+CSS selector
+
+-Nắm vững thuộc tính transition cơ bản -> animation khi hover kiểu vậy
+
+transition: property timer easing 
+transsition: green 2s linear -> 2s giây sau mới sang màu xanh có chuyển động
+transition: background-color 0.2s ease, color 0.2s ease
+transition-delay:2s
+trasition : all 0.2s linear
+
+display :none , block -> transition sẽ không áp dụng được
+
+color: transparent; - màu trong suốt
+text-transform: uppercase; -> chữ văn bản thành chữ hoa
+
+-Kiến thức CSS nâng cao
+
+-Thuộc tính transform để làm gì ? Tìm hiểu các giá trị hay dùng của transform
+
+
+transform : nó sẽ thay đổi vật thể ban đầu nhưng chiếm diện tích vẫn như vậy
+
+transform scale(chiều ngang, chiều dọc) scaleX(tăng theo chiều ngang) scaleY(tăng theo chiều dọc)
+
+transform: rotate(45deg) rotate() rotateX() rotateY() totateZ()  -> xoay 45 độ
+transform:translate() translateX() translateY()  -> di chuyển theo 1 khoảng nào đó nhưng bản chất nó vẫn không tăng diện tích
+margin:5rem
+transform:skew()s skewX skewY() -> kiểu như tạo hình bình hành
+
+-Tìm hiểu thuộc tính position relative??
+
+position: relative -> di chuyển vật thể mà không ảnh hưởng đến vật khác 
+top ,right,left,bottom
+
+-Master thuộc tính position absolute
+
+position:absolute -> không chiếm khoảng trống nữa
+
+overlay all 
+top:0
+left:0
+width:100%
+height:100%
+z-index: -> thằng nào số lớn hơn thì nằm ở trên
+
+-Hiểu rõ position fixed hoạt động??
+
+position:fixed -> cố định khi scroll -> phụ thuộc vào body không phụ thuộc vào thằng cha
+nếu dùng với transform :translate thì chạy không tốt -> chạy theo phần tử cha, phần tử cha dùng transform : translate thì khôgn còn fixed
+
+
+
+Thực hành với thuộc tính position #1
+-làm modal với position
+-tư duy : phần mờ bên ngoài  -> tạo một lớp phủ bên ngoài -> postion:fixed -> vì fixed chạy theo body mình đang muốn 
+nó phủ hết body
+code: phủ hết
+top:0
+left:0
+width:100%
+height:100%
+z-index:2
+-tư duy modal ra giữa thì dùng:absolute và transform:translate(-50%,-50%),top 50% ,left50%
+
+Thực hành với thuộc tính position #2
+object-fit:cover -> phủ hết cái khung nào đó
+
+Thực hành với thuộc tính position #3
+
+Thực hành với thuộc tính position #4
+
+tư duy:
+-thẻ block muốn ra giữa -> margin :  0 auto;
+border-radirus:inherit: -> kế thừa border-radius của thằng cha
+tạo hình tròn -> width height và border-radius bằng nhau
+- cách 1: cho ra giữa với margin  -> cho bằng 1 nửa width height
+cách 2: top 50% left 50%  transform :translate(-50%,-50%);
+
+
+-Hiểu và nắm tốt pseudo :before vs :after khó nhằn trong CSS
+:before -> chèn về phía trước
+.class:before{
+content(bắt buộc):-> phần nội dung này không bôi đen được
+}
+.class:after{
+content
+}
+
+-Thực hành với pseudo before và after #1
+
+tạo hình tròn nhỏ trước nội dung dùng before
+dùng position:absolute để không cần điền vào content 
+
+Thực hành với pseudo before và after #2 -> code đường line xuyên chữ
+
+Thực hành với pseudo before và after #3
+
+khi đổi màu chữ thì backgroud color cũng đổi theo luôn
+background-color:currentColor -> lấy màu theo màu chữ hiện tại( color của thằng cha)
+
+Thực hành với pseudo before và after #4
+khi hover vào thì có background-color của before chạy từ trái qua phải -> before để width= 0 z-index:-1 -> hover:before  để width:100%
+
+-Tại sao before và after quan trong và lưu ý khi làm với việc với thuộc tính transform
+-> khi mình muốn xoay chuyển hay di chuyển 1 khối mà không muốn nội dung bên trong di chuyển theo thì dùng một
+lớp giả với after còn trasform thì nó khiến nội dung đi theo
+
+-Animation là gì ? Tìm hiểu và nắm kiến thức về animation cơ bản
+
+-> muốn làm hiệu ứng lặp đi lặp lại -> animation -> 
+@keyframes move(tên animation){
+	from{
+	    transform:translateX()
+}
+	to(100%){
+	     transform:translateY()
+}
+} 
+
+-để sử dụng thìtheem thuộc tính: 
+animation-name:move;
+animation-duration:2s(tổng thời gian chạy );
+animation-direction:alternate(chạy lên rồi chạy về);
+animation-interation-count:infinite(tổng số lần chạy, infinite-> vô tận
+animation-timing-function:cubic-bezier
+animation-fill-mode:forwards(backwards- chạy 1 chiều từ trái qua phải);
+animation : move 2s forwards infinite alternate cubic-bezier(...) 5s(animation-delay)
+
+
+-FlexBox là gì ? Giới thiệu về FlexBox
+-FlexBox toàn tập #1 (row)
+display:flex-> cố định -> nằm ngang vì flex-direction:row; độ cao của các phần tử bằng nhau vì -> align-item:stretch
+flex-direction:row-reverse;(đảo chiều nằm ngang
+flex-ư)
+align-item:flex-start(căn ở trên)
+algin-items: flex-end(căn ở dưới)
+algin-items:center(căn ở giữa)
+algin-items:baseline(căn phần đít chữ )
+justify-content:flex-start(nằm bên trái-cố định) flex-end(nằm bên phải) center(nằm giữa) space-between( có khoảng trống ở giữa) space-around( có khoảng trống ở xung quanh) space-evenly(khoảng trống giữa các phần tử bằng nhau)
+align-self:( xét theo từng phần tử -> code vào từng phần tử )
+flex-wrap:nowrap( cố định) wrap ( xuống dòng nếu quá 100%)
+flex-flow:nowrap wrap
+
+-FlexBox toàn tập#2
+flex-direction:column;
+algin-items:stretch(cố định-chiều dài bằng nhau) flex-start center flex-end baseline 
+justify-content: flex-start(cố định) center space-between space-around space-evenly
+
+-FlexBox toàn tập #3:
+thuộc tính order để thay đổi vị trí thứ tự
+
+ra giữa 
+display:flex
+align-items:center
+justify-content:center
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,85 @@
+/* background gradient */
+.boxed {
+  width: 20rem;
+  height: 20rem;
+  background-image: linear-gradient(to right bottom, #00aefd, #ffa400);
+  /* 
+  direction: to right, to left,  to bottom to top,to right bottom, to left top,....
+  120deg:120 độ
+  color1,
+  color2
+  */
+}
+
+/* text gradient */
+.title {
+  font-weight: bold;
+  font-size: 3rem;
+  display: inline-block;
+  color: transparent;
+  /* chữ trong suốt  */
+  /* -webkit-background-clip: text; */
+  background-clip: text;
+  color: #00aefd;
+}
+
+@supports not (-webkit-background-clip: text) {
+  .title {
+    background-image: linear-gradient(to right, #00aefd, #ffa400);
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+}
+/* supports not -> nếu như không hỗ trợ */
+
+/* hiển thị 2 hình nền */
+.background {
+  width: 100vw;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: linear-gradient(to right, #00adfd5f, #ffa60069),
+    url("https://images.unsplash.com/photo-1683924071523-d438728de269?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80");
+}
+/* dùng mã màu rgba để hiển thị trong suốt */
+
+/* sự khác nhau giữa 3 thuộc tính opacity:0,display:none,visibility:hidden */
+.hidden {
+  width: 10rem;
+  height: 10rem;
+  background-image: linear-gradient(to right, #00aefd, #ffa400);
+  cursor: pointer;
+  opacity: 0;
+  /* nếu mình để opacity:0 thì nó bị ẩn đi những vẫn chiếm diện tích,vẫn click được */
+  visibility: hidden;
+  /* bị ẩn đi nó vẫn chiếm diện tích,nhưng không click được  */
+  display: none;
+  /* biến mất hoàn toàn không chiếm diện tích, không click được */
+}
+
+/* shadow CSS */
+.shadow {
+  width: 20rem;
+  height: 20rem;
+  background-color: black;
+  margin: 5rem auto;
+  box-shadow: 20px 19px 10px 5px rgba(255, 0, 0, 0.788);
+  /* box-shadow : x y blur scale color */
+  /* inset sẽ nằm bên trong */
+}
+
+.shadow-text {
+  font-size: 5rem;
+  text-shadow: 5px 5px 10px red;
+}
+
+/* sử dụng biến trong CSS như nào */
+:root {
+  --primary-color: #00aefd;
+  --second-color: #ffa400;
+}
+/* cũng có thể ghi đè nội dung biến nếu ở trong class thì chỉ áp dụng với class đó */
+/* var(--primary-color) */
+
+/* ưu tiên trong CSS */
+/* Tags<Class<ID<!important */
